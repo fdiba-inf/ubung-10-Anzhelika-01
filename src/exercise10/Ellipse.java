@@ -3,38 +3,38 @@ package exercise10;
 public class Ellipse extends Figure{
 
     public Ellipse() {
-        super(new Point(0, 0));
+        super(new Point(0, 0), 1, 1);
     }
 
     public Ellipse(Point startPoint, double a, double b) {
-        super(new Point(startPoint));
+        super(new Point(startPoint, a, b));
     }
 
     public Ellipse(Ellipse otherEllipse) {
-        super(new Point(otherEllipse.startPoint));
+        super(otherEllipse.startPoint, otherEllipse.side1, otherEllipse.side2);
     }
     @Override
     public double calculatePerimeter() {
-        return Math.PI * (3.0 * (a + b) - Math.sqrt((3.0 * a + b) * (a + 3.0 * b)));
+        return Math.PI * (3.0 * (side1 + side2) - Math.sqrt((3.0 * side1 + side2) * (side1 + 3.0 * side2)));
     }
 
     @Override
     public double calculateArea() {
-        return Math.PI * a * b;
+        return Math.PI * side1 * side2;
     }
 
     @Override
     public String getType() {
-        return (a == b) ? "Circle" : "Ellipse";
+        return (side1 == side2) ? "Circle" : "Ellipse";
     }
 
     @Override
-    public boolean equal(Ellipse otherEllipse) {
+    public boolean equal(Figur otherFigure) {
         if (otherFigure instanceof Ellipse) {
             return super.equal(otherFigure);
         } else {
             return false;
-        }
+        } 
     }
 
     @Override
