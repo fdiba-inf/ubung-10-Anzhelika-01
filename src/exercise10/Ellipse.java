@@ -29,7 +29,7 @@ public class Ellipse extends Figure{
     }
 
     @Override
-    public boolean equal(Figur otherFigure) {
+    public boolean equal(Figure otherFigure) {
         if (otherFigure instanceof Ellipse) {
             return super.equal(otherFigure);
         } else {
