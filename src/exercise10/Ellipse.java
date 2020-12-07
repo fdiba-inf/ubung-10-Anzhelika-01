@@ -7,7 +7,7 @@ public class Ellipse extends Figure{
     }
 
     public Ellipse(Point startPoint, double a, double b) {
-        super(new Point(startPoint, a, b));
+        super(startPoint, a, b);
     }
 
     public Ellipse(Ellipse otherEllipse) {
